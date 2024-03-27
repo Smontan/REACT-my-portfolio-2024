@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom CSS */
+:root {
+  /* Colors */
+  --primary-color: #edf2f8;
+  --secondary-color: #313bac;
+  --accent-color: #551d18;
+  --black100-color: #24242b;
+  --black75-color: #24242bbf;
+  --black50-color: rgba(36, 36, 43, 0.5);
+  --black25-color: rgba(36, 36, 43, 0.25);
+  --black10-color: rgba(36, 36, 43, 0.1);
+  --black5-color: rgba(36, 36, 43, 0.05);
+  --error-color: #ab3a30;
+}
+
+body {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  background-color: var(--primary-color);
+}
+
+p {
+  font-style: normal;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 61px;
+}
+h2 {
+  font-size: 49px;
+}
+h3 {
+  font-size: 39px;
+}
+h4 {
+  font-size: 31px;
+}
+h5 {
+  font-size: 25px;
+}
+h6 {
+  font-size: 20px;
+}
+
+.neomorph-shadow {
+  /* border-radius: 16px; */
+  /* background: #edf2f8; */
+  box-shadow:
+    8px 8px 16px #7a96b8,
+    -8px -8px 16px #ffffff;
+}
+.neomorph-shadow-sm {
+  box-shadow:
+    2px 2px 4px #7a96b8,
+    -2px -2px 4px #ffffff;
+}
+.neomorph-inset {
+  /* border-radius: 16px; */
+  /* background: #edf2f8; */
+  box-shadow:
+    inset 8px 8px 16px #7a96b8,
+    inset -8px -8px 16px #ffffff;
+}
+.neomorph-outline {
+  padding: 10px;
+  box-shadow:
+    8px 8px 16px #7a96b8,
+    -8px -8px 16px rgb(255, 255, 255, 0.5),
+    inset 4px 4px 8px #7a96b8,
+    inset -4px -4px 8px rgb(255, 255, 255, 0.5);
+}
+
+.spacing {
+  padding: 40px 0;
+}
