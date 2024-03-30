@@ -17,7 +17,7 @@
 :root {
   /* Colors */
   --primary-color: #edf2f8;
-  --secondary-color: #313bac;
+  --secondary-color: #892621;
   --accent-color: #551d18;
   --black100-color: #24242b;
   --black75-color: #24242bbf;
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 900;
 }
 h1 {
   font-size: 61px;
@@ -65,7 +65,8 @@ h6 {
   font-size: 20px;
 }
 
-.neomorph-shadow {
+.neomorph-shadow,
+.neomorph-shadow-normal {
   /* border-radius: 16px; */
   /* background: #edf2f8; */
   box-shadow:
@@ -77,6 +78,7 @@ h6 {
     2px 2px 4px #7a96b8,
     -2px -2px 4px #ffffff;
 }
+
 .neomorph-inset {
   /* border-radius: 16px; */
   /* background: #edf2f8; */
@@ -85,12 +87,17 @@ h6 {
     inset -8px -8px 16px #ffffff;
 }
 .neomorph-outline {
-  padding: 10px;
   box-shadow:
     8px 8px 16px #7a96b8,
     -8px -8px 16px rgb(255, 255, 255, 0.5),
     inset 4px 4px 8px #7a96b8,
     inset -4px -4px 8px rgb(255, 255, 255, 0.5);
+  @apply p-2;
+}
+
+.neomorph-shadow:active,
+.neomorph-shadow-sm:active {
+  @apply transition-all duration-200 ease-in-out  active:shadow-inner;
 }
 
 .spacing {

@@ -6,7 +6,7 @@ export default {
       colors: {
         primary: "#edf2f8",
         secondary: "#313bac",
-        accent: "#551d18",
+        accent: "#892621",
         black100: "24242b",
         black75: "rgba(36, 36, 43, 0.75)",
         black50: "rgba(36, 36, 43, 0.5)",

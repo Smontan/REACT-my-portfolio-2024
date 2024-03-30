@@ -2,15 +2,24 @@ import { LuHome, LuLayers, LuPhone, LuUserCircle } from "react-icons/lu";
 import { NavLink } from "react-router-dom";
 
 import logo from "../assets/my-profile.png";
+import Tooltip from "../components/Tooltip";
 
 const Header = () => {
   const linkList = [
-    { path: "/", icon: <LuHome size={20} strokeWidth={2.5}/>, title: "Home" },
-    { path: "/projects", icon: <LuLayers size={20} strokeWidth={2.5}/>, title: "Projects" },
-    { path: "/about", icon: <LuUserCircle size={20} strokeWidth={2.5}/>, title: "About" },
+    { path: "/", icon: <LuHome size={20} strokeWidth={2.5} />, title: "Home" },
+    {
+      path: "/projects",
+      icon: <LuLayers size={20} strokeWidth={2.5} />,
+      title: "Projects",
+    },
+    {
+      path: "/about",
+      icon: <LuUserCircle size={20} strokeWidth={2.5} />,
+      title: "About",
+    },
   ];
   return (
-    <header className="sticky top-0 border-b px-4 shadow-lg backdrop-blur-lg lg:px-0">
+    <header className="sticky top-0 z-40  px-4 backdrop-blur-lg lg:px-0">
       <nav className="container mx-auto flex items-center justify-between py-3">
         <div>
           <NavLink to="/" className="flex items-center gap-2 overflow-hidden">
@@ -38,10 +47,10 @@ const Header = () => {
           {/* CTA Button to Contact me page */}
           <li className="neomorph-outline rounded-lg">
             <NavLink to="/contact">
-              <span className="neomorph-shadow-sm group relative inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-md bg-accent p-2 text-sm  font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-opacity-90 md:px-4 md:py-2">
-                <LuPhone strokeWidth={2.5}/>
+              <span className="neomorph-shadow-sm group relative inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-md bg-accent p-2 text-sm  font-bold text-white  md:p-3 ">
+                <LuPhone strokeWidth={3} />
                 <span className="hidden md:block">Contact me</span>
-                <span className="absolute -right-3 top-11 z-10 scale-0  rounded-lg border-[2px] border-solid border-indigo-300 bg-indigo-200  p-3 text-[16px]  tracking-tight text-indigo-500 transition-all group-hover:scale-100 md:hidden ">
+                <span className="absolute -right-3 top-11 z-10 scale-0  rounded-lg border-[2px] border-solid border-indigo-300 bg-indigo-100  p-3 text-[16px]  tracking-tight text-indigo-500 transition-all group-hover:scale-100 md:hidden ">
                   Contact me
                 </span>
               </span>
@@ -63,12 +72,10 @@ const NavLinks = ({ path, icon, name }) => {
 
   return (
     <NavLink to={path} style={navLinkStyle}>
-      <div className="group relative inline-flex cursor-pointer items-center gap-1 text-2xl font-bold tracking-tighter hover:text-secondary md:text-lg">
+      <div className="group relative inline-flex cursor-pointer items-center gap-1 text-2xl font-bold tracking-tighter hover:text-secondary hover:drop-shadow-lg md:text-lg">
         {icon}
         <span className="hidden md:block">{name}</span>
-        <span className="absolute right-0 top-8 z-10 scale-0  rounded-lg border-[2px] border-solid border-indigo-300 bg-indigo-200  px-4 py-2 text-[16px] tracking-tight text-indigo-500 shadow-lg shadow-indigo-200 transition-all group-hover:scale-100 md:hidden">
-          {name}
-        </span>
+        <Tooltip title={name} />
       </div>
     </NavLink>
   );
