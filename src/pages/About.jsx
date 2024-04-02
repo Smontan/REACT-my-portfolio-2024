@@ -236,19 +236,19 @@ const About = () => {
         <div className="flex flex-col gap-10">
           <h3 className="text-center text-black100">About me</h3>
           <div className="flex flex-col items-center justify-center gap-10 md:flex-row">
-            <div className="neomorph-shadow flex w-[240px] overflow-hidden rounded-lg bg-secondary bg-opacity-20 ">
+            <div className="neomorph-inset flex w-[240px] overflow-hidden rounded-lg bg-secondary bg-opacity-20 ">
               <img src={profile} alt="My profile picture" className="" />
             </div>
-            <div className="relative flex max-w-[500px] gap-2 leading-6 text-black75">
+            <div className="relative flex max-w-[500px] gap-2 leading-6 ">
               <LuQuote
-                className=" flex-none"
+                className=" flex-none text-black50"
                 style={{ transform: "rotatey(180deg)" }}
                 size={24}
               />
               <p>
                 Hello, I'm{" "}
                 <span className="font-bold capitalize text-secondary">
-                  Sherwin Montanez
+                  Sherwin Montañez
                 </span>{" "}
                 a web developer, I specialize in frontend development, where I
                 channel my passion for creating visually captivating websites
@@ -260,7 +260,7 @@ const About = () => {
                 the world. Join me as I embark on this exciting adventure of
                 creativity and growth in the digital landscape.
               </p>
-              <LuQuote className="mt-auto flex-none " size={24} />
+              <LuQuote className="mt-auto flex-none text-black50" size={24} />
             </div>
           </div>
         </div>
@@ -268,14 +268,13 @@ const About = () => {
         <div className="flex flex-col items-center gap-10">
           <h3 className="text-black100">Educational Background</h3>
           <div className="md:gap10 flex flex-col items-center gap-5 md:flex-row">
-            <div className="flex h-full max-w-[500px] flex-col items-center justify-between gap-5 text-center">
+            <div className="flex h-full max-w-[500px] flex-col items-center justify-between text-center">
+              <p className="font-semibold leading-7 tracking-tighter text-black50 ">
+                Graduated at North Eastern Mindanao State University
+              </p>
               <h5 className="leading-7 tracking-tighter text-secondary">
                 Bachelor of Science in Information Technology
               </h5>
-              <p className="font-semibold leading-7 tracking-tighter text-black50 ">
-                Graduated at North Eastern Mindanao State University (Cagwait
-                Branch)
-              </p>
             </div>
             <div className="neomorph-shadow w-[240px] rounded-full p-2">
               <img src={nemsu} alt="NEMSU" className="object-fill" />
