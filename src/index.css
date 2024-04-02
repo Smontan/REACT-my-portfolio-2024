@@ -28,6 +28,10 @@
   --error-color: #ab3a30;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
   background-color: var(--primary-color);
@@ -36,6 +40,7 @@ body {
 p {
   font-style: normal;
   font-size: 16px;
+  color: var(--black75-color);
 }
 
 h1,
@@ -51,6 +56,7 @@ h1 {
 }
 h2 {
   font-size: 49px;
+  @apply leading-tight
 }
 h3 {
   font-size: 39px;
@@ -83,8 +89,8 @@ h6 {
   /* border-radius: 16px; */
   /* background: #edf2f8; */
   box-shadow:
-    inset 8px 8px 16px #7a96b8,
-    inset -8px -8px 16px #ffffff;
+    inset 4px 4px 8px #7a96b8,
+    inset -4px -4px 8px #ffffff;
 }
 .neomorph-outline {
   box-shadow:

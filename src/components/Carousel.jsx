@@ -23,9 +23,9 @@ const Carousel = ({
   }, []);
 
   return (
-    <section className=" relative flex h-full items-center">
+    <section className=" relative flex h-full items-center ">
       <div
-        className="flex  transition-all duration-300"
+        className="flex  transition-all duration-300 "
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}

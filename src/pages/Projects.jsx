@@ -8,6 +8,7 @@ import { FaReact } from "react-icons/fa6";
 
 import Tooltip from "../components/Tooltip";
 import ProjectCard from "../components/ProjectCard";
+import Carousel from "../components/Carousel";
 
 const Projects = () => {
   const projectCategories = [
@@ -42,7 +43,7 @@ const Projects = () => {
   return (
     <section className=" spacing container mx-auto">
       <div className="flex flex-col items-center gap-[40px]">
-        <h2 className="capitalize">
+        <h2 className="capitalize text-black100">
           My Creative <span className="text-secondary">Projects</span>
         </h2>
 
@@ -56,15 +57,14 @@ const Projects = () => {
         </ul>
 
         {/* Poject Card */}
-        <div className="flex w-full flex-wrap items-center justify-center gap-4">
+        <div className=" w-full flex-wrap items-center justify-center gap-4 flex">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
         </div>
+        
       </div>
-
-     
     </section>
   );
 };
