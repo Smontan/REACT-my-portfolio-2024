@@ -34,7 +34,7 @@ const Contact = () => {
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
         toast.open(
-          <div className="flex gap-2 rounded-lg border border-green-500 bg-green-300 p-4 text-green-200 shadow-lg">
+          <div className="flex gap-2 rounded-lg border border-green-500 bg-green-300 p-4 text-green-800 shadow-lg">
             <LuShieldCheck size={32} />
             <div className="space-y-1">
               <h6>Message Send</h6>
