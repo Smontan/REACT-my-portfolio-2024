@@ -11,7 +11,7 @@ const Hero = () => {
           <h2 className=" text-black100">Hi I'm</h2>
           <h1 className="text-secondary">
             Sherwin{" "}
-            <div className=" inline-block  transition duration-300 hover:-rotate-45 ease-in-out">
+            <div className=" inline-block  cursor-none transition duration-300 ease-in-out hover:-rotate-45">
               🖐️
             </div>
           </h1>

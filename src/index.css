@@ -34,7 +34,13 @@ html {
 
 body {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  position: relative;
+  background-image: url("./assets/bgIMG.png");
+  /* background-size: cover; */
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 p {
@@ -56,7 +62,7 @@ h1 {
 }
 h2 {
   font-size: 49px;
-  @apply leading-tight
+  @apply leading-tight;
 }
 h3 {
   font-size: 39px;
@@ -79,7 +85,9 @@ h6 {
     8px 8px 16px #7a96b8,
     -8px -8px 16px #ffffff;
 }
-.neomorph-shadow-sm {
+
+.neomorph-shadow-sm,
+.neomorph-shadow-normal-sm {
   box-shadow:
     2px 2px 4px #7a96b8,
     -2px -2px 4px #ffffff;

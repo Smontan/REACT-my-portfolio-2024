@@ -9,6 +9,7 @@ import { FaReact } from "react-icons/fa6";
 import Tooltip from "../components/Tooltip";
 import ProjectCard from "../components/ProjectCard";
 import Carousel from "../components/Carousel";
+import { projects } from "../constants";
 
 const Projects = () => {
   const projectCategories = [
@@ -40,6 +41,9 @@ const Projects = () => {
       textColor: "text-white",
     },
   ];
+
+  // const images = [bookingImg, website, website, website, website, website];
+
   return (
     <section className=" spacing container mx-auto">
       <div className="flex flex-col items-center gap-[40px]">
@@ -48,22 +52,20 @@ const Projects = () => {
         </h2>
 
         {/* Project Category UI/UX, Web App, Mobile App, React Js*/}
-        <ul className="flex items-center justify-center gap-4 lg:gap-12">
+        {/* <ul className="flex items-center justify-center gap-4 lg:gap-12">
           {projectCategories.map((category) => (
             <li key={category.title}>
               <ProjectCategory {...category} />
             </li>
           ))}
-        </ul>
+        </ul> */}
 
         {/* Poject Card */}
-        <div className=" w-full flex-wrap items-center justify-center gap-4 flex">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+        <div className=" flex w-full flex-wrap items-center justify-center gap-4">
+          {projects.map((project) => (
+            <ProjectCard {...project} key={project.title} />
+          ))}
         </div>
-        
       </div>
     </section>
   );
