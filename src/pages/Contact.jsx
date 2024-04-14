@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { LuSend } from "react-icons/lu";
 import emailjs from "@emailjs/browser";
+import { LuShieldCheck, LuShieldClose } from "react-icons/lu";
 
 import emailImg from "../assets/email.png";
 import phone from "../assets/phone.png";
+import { useToast } from "../components/Toast/ToastService";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const toast = useToast();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -30,12 +33,37 @@ const Contact = () => {
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
-        console.log("SUCCESS! ", response);
+        toast.open(
+          <div className="flex gap-2 rounded-lg border border-green-500 bg-green-300 p-4 text-green-200 shadow-lg">
+            <LuShieldCheck size={32} />
+            <div className="space-y-1">
+              <h6>Message Send</h6>
+              <p className="text-sm text-green-800">
+                Hi <b>{name}</b> your message send successfully!
+              </p>
+            </div>
+          </div>,
+        );
+        console.log("SUCCESS!: ", response);
         setName("");
         setEmail("");
         setMessage("");
       })
-      .catch((error) => console.log("Error sending your mail: ", error));
+      .catch((error) => {
+        toast.open(
+          <div className="flex gap-2 rounded-lg border border-red-200 bg-red-300 p-4 text-red-800 shadow-lg">
+            <LuShieldClose size={32} />
+            <div className="space-y-1">
+              <h6>Sending Failed</h6>
+              <p className="text-sm text-red-800">
+                Hi <b>{name}</b>, we had and error sending your message. Please
+                try again later.
+              </p>
+            </div>
+          </div>,
+        );
+        console.log("Error sending your mail: ", error);
+      });
   };
 
   return (
