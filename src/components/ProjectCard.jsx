@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { LuEye, LuGithub } from "react-icons/lu";
 import { useState } from "react";
 
+
 import Modal from "../components/Modal";
 import Carousel from "../components/Carousel";
 
@@ -11,7 +12,7 @@ const ProjectCard = ({
   projectImages,
   technologies,
   category,
-  projectLinks
+  projectLinks,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -29,13 +30,19 @@ const ProjectCard = ({
             {category}
           </span>
           <div className="absolute -bottom-10 flex h-full w-full  items-center justify-center gap-8 bg-black75 opacity-0 backdrop-blur-sm  transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
-            <Link to={projectLinks.website} className="flex flex-col items-center gap-2 ">
+            <Link
+              to={projectLinks.website}
+              className="flex flex-col items-center gap-2 "
+            >
               <div className="neomorph-shadow w-fit rounded-full border-slate-50/10 bg-black75 p-3 text-white transition-all duration-300 hover:bg-accent hover:bg-opacity-60">
                 <LuEye size={24} />
               </div>
               <span className="text-xs text-white">View Website</span>
             </Link>
-            <Link to={projectLinks.github} className="flex flex-col items-center gap-2 ">
+            <Link
+              to={projectLinks.github}
+              className="flex flex-col items-center gap-2 "
+            >
               <div className="neomorph-shadow rounded-full border border-slate-50/10 bg-black75 p-3 text-white transition-all duration-300 hover:bg-accent hover:bg-opacity-60">
                 <LuGithub size={24} />
               </div>
@@ -79,11 +86,17 @@ const ProjectCard = ({
             <div className="flex h-48 flex-col gap-2 overflow-y-auto py-4   md:h-full md:gap-4">
               <h5 className="leading-8 tracking-tighter">{title}</h5>
               <div className="mb-3 flex gap-2">
-                <Link to={projectLinks.website} className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white">
+                <Link
+                  to={projectLinks.website}
+                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white"
+                >
                   <LuEye />
                   Website
                 </Link>
-                <Link to={projectLinks.github} className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white">
+                <Link
+                  to={projectLinks.github}
+                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white"
+                >
                   <LuGithub />
                   GitHub
                 </Link>

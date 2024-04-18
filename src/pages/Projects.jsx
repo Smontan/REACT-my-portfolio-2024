@@ -10,6 +10,7 @@ import Tooltip from "../components/Tooltip";
 import ProjectCard from "../components/ProjectCard";
 import Carousel from "../components/Carousel";
 import { projects } from "../constants";
+import MotionWrapper from "../components/MotionWrapper";
 
 const Projects = () => {
   const projectCategories = [
@@ -61,11 +62,13 @@ const Projects = () => {
         </ul> */}
 
         {/* Poject Card */}
-        <div className=" flex w-full flex-wrap items-center justify-center gap-4">
-          {projects.map((project) => (
-            <ProjectCard {...project} key={project.title} />
-          ))}
-        </div>
+        <MotionWrapper>
+          <div className=" flex w-full flex-wrap items-center justify-center gap-4">
+            {projects.map((project) => (
+              <ProjectCard {...project} key={project.title} />
+            ))}
+          </div>
+        </MotionWrapper>
       </div>
     </section>
   );

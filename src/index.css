@@ -41,6 +41,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
+  min-height: 100vh;
 }
 
 p {
