@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
-import { LuEye, LuGithub } from "react-icons/lu";
 import { useState } from "react";
+import { LuEye, LuGithub } from "react-icons/lu";
 
-
-import Modal from "../components/Modal";
 import Carousel from "../components/Carousel";
+import Modal from "../components/Modal";
 
 const ProjectCard = ({
   title,
@@ -30,24 +28,26 @@ const ProjectCard = ({
             {category}
           </span>
           <div className="absolute -bottom-10 flex h-full w-full  items-center justify-center gap-8 bg-black75 opacity-0 backdrop-blur-sm  transition-all duration-300 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
-            <Link
-              to={projectLinks.website}
-              className="flex flex-col items-center gap-2 "
+            <a
+              href={projectLinks.website}
+              target="_blank"
+              className="flex flex-col items-center gap-2 cursor-pointer "
             >
               <div className="neomorph-shadow w-fit rounded-full border-slate-50/10 bg-black75 p-3 text-white transition-all duration-300 hover:bg-accent hover:bg-opacity-60">
                 <LuEye size={24} />
               </div>
               <span className="text-xs text-white">View Website</span>
-            </Link>
-            <Link
-              to={projectLinks.github}
-              className="flex flex-col items-center gap-2 "
+            </a>
+            <a
+              href={projectLinks.github}
+              target="_blank"
+              className="flex flex-col items-center gap-2 cursor-pointer "
             >
               <div className="neomorph-shadow rounded-full border border-slate-50/10 bg-black75 p-3 text-white transition-all duration-300 hover:bg-accent hover:bg-opacity-60">
                 <LuGithub size={24} />
               </div>
               <span className="text-xs text-white">GitHub Repo</span>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -86,20 +86,22 @@ const ProjectCard = ({
             <div className="flex h-48 flex-col gap-2 overflow-y-auto py-4   md:h-full md:gap-4">
               <h5 className="leading-8 tracking-tighter">{title}</h5>
               <div className="mb-3 flex gap-2">
-                <Link
-                  to={projectLinks.website}
-                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white"
+                <a
+                  href={projectLinks.website}
+                  target="_blank"
+                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white cursor-pointer"
                 >
                   <LuEye />
                   Website
-                </Link>
-                <Link
-                  to={projectLinks.github}
-                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white"
+                </a>
+                <a
+                  href={projectLinks.github}
+                  target="_blank"
+                  className="neomorph-shadow-sm flex items-center justify-center gap-1 rounded bg-secondary p-2 text-xs font-semibold tracking-tighter text-white cursor-pointer"
                 >
                   <LuGithub />
                   GitHub
-                </Link>
+                </a>
               </div>
               <p className="text-black75">{description}</p>
             </div>
